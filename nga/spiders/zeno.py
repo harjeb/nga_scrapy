@@ -24,7 +24,7 @@ class NgaSpider(scrapy.Spider):
 
 
     def parse(self, response):
-        for endpage in xrange(2000):
+        for endpage in xrange(1000):
             url = 'http://bbs.ngacn.cc/thread.php?&lite=js' + '&page=%s' % endpage
             yield scrapy.Request(url, callback=self.parse_dir_contents)
             endpage += 1
